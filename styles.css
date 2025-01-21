@@ -51,7 +51,7 @@ section {
 
 .cursor {
     display: inline-block;
-    background-color: black;
+    background-color: rgba(80, 80, 80, 1);
     width: 2px;
     height: 0em;
     animation: blink 0.5s steps(2, start) infinite;
@@ -87,7 +87,7 @@ section {
 .project-card {
     display: flex;           /* Place media + info side by side */
     flex-wrap: wrap;         /* Allows wrapping on smaller screens */
-    background-color: #f9f9f9;
+    background-color: #ede8d0;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;        /* If images are bigger than container */
@@ -142,22 +142,21 @@ section {
 .project-info .project-link {
     display: inline-block;
     margin-top: 10px;
-    color: #007bff;
+    color: #800020;
     text-decoration: none;
     border: 1px solid transparent;
     padding: 6px 12px;
     border-radius: 4px;
     transition: 0.2s;
-    background-color: #e8e8e8;
+    background-color: #e6e6fa;
 }
 
 .project-info .project-link:hover {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #800020;
+    color: #dddddd;
 }
 
 #projects {
-    background: radial-gradient(circle, #eee3d3, #e5d5be);
     padding: 100px 40px;
     /* Add more styles as needed */
 }
@@ -253,6 +252,7 @@ section {
     display: inline-block;
     vertical-align: middle;
     filter: brightness(0) saturate(0); /* Default to black and white */
+
 }
 
 .icon-container img {
@@ -270,7 +270,7 @@ section {
    Contact Section
 ----------------------------------------------------- */
 .contact {
-    background-color: #ffffff; /* Adjust as needed */
+    background: radial-gradient(circle, #ece8ca, #ede8d0);
     padding: 60px 20px;
     text-align: center;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
@@ -279,7 +279,7 @@ section {
 .contact h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #333333;
+    color: rgba(80, 80, 80, 1);
 }
 
 .contact-list {
@@ -304,20 +304,20 @@ section {
 
 .contact-list i {
     margin-right: 15px;
-    color: #4caf50; /* Icon color */
+    color: #64001b; /* Icon color */
     min-width: 24px; /* Ensure uniform spacing */
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
 .contact-list a {
-    color: #007bff;
+    color: #800020;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .contact-list a:hover {
-    color: #0056b3;
+    color: #64001b;
     text-decoration: underline;
 }
 
@@ -353,7 +353,7 @@ section {
     transform: none;
     width: 100%;           /* Fill the parent container’s width */
     height: 100%;          /* Fill the parent container’s height */
-    border: 2px solid #ffffff; /* optional border */
+    border: 2px solid #ede8d0; /* optional border */
     display: block;
 }
 
