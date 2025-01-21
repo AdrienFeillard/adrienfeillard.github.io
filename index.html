@@ -3,16 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tooltip Example</title>
-    <!-- Link to the CSS file -->
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- Include Three.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Include GLTFLoader from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <script src="script.js" defer></script>
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-pap06Z6qdV5kCF/Dj6eDGJzb9B2MxaGx6BdxI0dg3TJKtBSO0UeT4JXtmSYjWnXZ2j2FG9+HP9LO6QKkUXa2vA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
 </head>
 <body>
-    <div class="container">
-        <h1>Hover over the icons to see tooltips</h1>
-        <!-- Icon example -->
-        <i class="icon example-icon" title="This is a tooltip!">🔍</i>
-        <i class="icon example-icon" title="Another tooltip!">🎨</i>
+
+<header class="hero">
+    <h1 id="title">Adrien Feillard<span class="cursor"></span></h1>
+    <h2 id="subtitle">MSc student in Neurosciences engineering & Computational Neurosciences at EPFL<span class="cursor"></span></h2>
+</header>
+
+
+
+<!-- About Me Section -->
+<section class="about">
+    <h2>About Me</h2>
+    <p>
+        Briefly introduce yourself here. Share your background, interests, and what makes you unique.
+        Include any relevant details about your education, experience, and aspirations.
+
+    </p>
+    <p>
+        Briefly introduce yourself here. Share your background, interests, and what makes you unique.
+        Include any relevant details about your education, experience, and aspirations.
+
+    </p>
+    <p>
+        Briefly introduce yourself here. Share your background, interests, and what makes you unique.
+        Include any relevant details about your education, experience, and aspirations.
+
+    </p>
+    <p>
+        Briefly introduce yourself here. Share your background, interests, and what makes you unique.
+        Include any relevant details about your education, experience, and aspirations.
+
+    </p>
+    <p>
+        Briefly introduce yourself here. Share your background, interests, and what makes you unique.
+        Include any relevant details about your education, experience, and aspirations.
+
+    </p>
+
+</section>
+
+
+
+
+
+<section id="circular-skills">
+
+    <h2>Skills</h2>
+    <div class="skills-circle" style="position: relative;">
+
+        <!-- 4 circles:
+             1) inner-circle    (icons)
+             2) middle-circle   (dashed, no icons)
+             3) outer-circle    (icons)
+             4) outermost-circle (dashed, no icons)
+        -->
+        <div class="inner-circle"></div>
+        <div class="middle-circle"></div>
+        <div class="outer-circle"></div>
+        <div class="outermost-circle"></div>
+
+        <!-- Icons on inner circle -->
+        <span class="circular-icon-container inner-icon">
+          <span class="icon-inner">
+            <i class="devicon-python-plain colored"></i>
+            <span class="circular-tooltip">Python</span>
+          </span>
+        </span>
+
+
+        <span class="circular-icon-container inner-icon">
+          <span class="icon-inner">
+            <img src="images/mne_icon.svg" alt="Custom Icon" width="48" height="48">
+            <span class="circular-tooltip">MNE</span>
+          </span>
+        </span>
+
+        <span class="circular-icon-container inner-icon">
+          <span class="icon-inner">
+            <i class="devicon-pandas-plain colored"></i>
+            <span class="circular-tooltip">Pandas</span>
+          </span>
+        </span>
+        <span class="circular-icon-container inner-icon">
+          <span class="icon-inner">
+            <i class="devicon-pytorch-original colored"></i>
+            <span class="circular-tooltip">Pytorch</span>
+          </span>
+        </span>
+        <span class="circular-icon-container inner-icon">
+          <span class="icon-inner">
+            <i class="devicon-scikitlearn-plain colored"></i>
+            <span class="circular-tooltip">Scikit-Learn</span>
+          </span>
+        </span>
+        <span class="circular-icon-container inner-icon">
+            <span class="icon-inner">
+                <i class="devicon-matplotlib-plain colored"></i>
+                <span class="circular-tooltip">Matplotlib</span>
+            </span>
+        </span>
+
+        <span class="circular-icon-container inner-icon">
+            <span class="icon-inner">
+                <i class="devicon-latex-original colored"></i>
+                <span class="circular-tooltip">LaTeX</span>
+            </span>
+        </span>
+
+        <span class="circular-icon-container inner-icon">
+            <span class="icon-inner">
+                <i class="devicon-github-original colored"></i>
+                <span class="circular-tooltip">GitHub</span>
+            </span>
+        </span>
+
+        <span class="circular-icon-container inner-icon">
+            <span class="icon-inner">
+                <i class="devicon-dataspell-plain colored"></i>
+                <span class="circular-tooltip">Dataspell</span>
+            </span>
+        </span>
+        <span class="circular-icon-container inner-icon">
+            <span class="icon-inner">
+                <i class="devicon-jupyter-plain colored"></i>
+                <span class="circular-tooltip">Jupyter</span>
+            </span>
+        </span>
+
+        <!-- Add more inner-icon as needed -->
+
+        <!-- Icons on outer circle -->
+        <span class="circular-icon-container outer-icon">
+          <span class="icon-inner">
+            <i class="devicon-matlab-plain colored"></i>
+            <span class="circular-tooltip">Matlab</span>
+          </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+          <span class="icon-inner">
+            <i class="devicon-cplusplus-plain colored"></i>
+            <span class="circular-tooltip">C++</span>
+          </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+            <span class="icon-inner">
+                <i class="devicon-r-plain colored"></i>
+                <span class="circular-tooltip">R</span>
+            </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+            <span class="icon-inner">
+            <i class="devicon-rstudio-plain colored"></i>
+            <span class="circular-tooltip">RStudio</span>
+            </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+            <span class="icon-inner">
+            <i class="devicon-eclipse-plain colored"></i>
+            <span class="circular-tooltip">Eclipse</span>
+            </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+            <span class="icon-inner">
+            <i class="devicon-javascript-plain colored"></i>
+            <span class="circular-tooltip">JavaScript</span>
+            </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+            <span class="icon-inner">
+            <i class="devicon-html5-plain colored"></i>
+            <span class="circular-tooltip">HTML5</span>
+            </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+            <span class="icon-inner">
+            <i class="devicon-css3-plain colored"></i>
+            <span class="circular-tooltip">CSS3</span>
+            </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+            <span class="icon-inner">
+            <i class="devicon-unrealengine-original colored"></i>
+            <span class="circular-tooltip">Unreal Engine</span>
+        </span>
+        </span>
+        <!-- Add more outer-icon as needed -->
+
+        <!-- Another icon container, but text only -->
+        <span class="circular-icon-container inner-icon">
+          <span class="icon-inner">
+            <span class="icon-text" style="font-family: Arial, sans-serif; font-size: 10px; line-height: 1.2; ">
+              Experienced
+            </span>
+
+          </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+          <span class="icon-inner">
+            <span class="icon-text" style="font-family: Arial, sans-serif; font-size: 10px; line-height: 1.2; ">Familiar </span>
+          </span>
+        </span>
+
     </div>
+</section>
+
+
+<section id="projects" class="projects">
+    <h2>Projects</h2>
+
+    <div class="project-cards">
+
+        <!-- PROJECT 1: Brain Visualization -->
+        <div class="project-card">
+            <!-- Project media container -->
+            <div class="project-media" id="brain-project-media">
+                <!-- Canvas goes here -->
+                <canvas id="brain-canvas"></canvas>
+            </div>
+
+            <div class="project-info">
+                <h3>Brain Visualization</h3>
+                <p>
+                    A 3D interactive brain model rendered with Three.js. Scroll to rotate/zoom.
+                </p>
+                <a href="https://github.com/AdrienFeillard/Semester-Project-1-LPSY" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> <i class="devicon-github-plain colored"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- PROJECT 2: Square Image Placeholder -->
+        <div class="project-card">
+            <div class="project-media">
+                <!-- Square image placeholder (same dimension as your canvas) -->
+                <img src="images/ML.webp" alt="Project 2 Screenshot" />
+            </div>
+            <div class="project-info">
+                <h3>Project 2 Title</h3>
+                <p>
+                    A brief description of your second project, highlighting relevant
+                    technologies or features.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/CS-433/ml-project-2-clementines" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> <i class="devicon-github-plain colored"></i>
+                    </a>
+                    <a href="pdfs/report_project2_ML.pdf" target="_blank" class="project-link">
+                        <i class="fas fa-file-pdf"></i> Project PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- PROJECT 3: Another Square Image Placeholder -->
+        <div class="project-card">
+            <div class="project-media">
+                <img src="images/a.webp" alt="Project 3 Screenshot" />
+            </div>
+            <div class="project-info">
+                <h3>Project 3 Title</h3>
+                <p>
+                    A brief description of your third project. Maybe mention
+                    the purpose, challenges, or achievements.
+                </p>
+                <a href="https://shobashu.github.io/ChatChuiPT.github.io/" target="_blank" class="project-link">
+                    Case Study
+                </a>
+            </div>
+        </div>
+
+        <!-- Add more project-cards as needed -->
+
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact">
+    <h2>Contact Informations</h2>
+    <ul class="contact-list">
+    <p>Email: <a href="mailto:adrien.feillard@gmail.com">adrien.feillard@gmail.com</a> or <a href="mailto:adrien.feillard@epfl.ch">adrien.feillard@epfl.ch</a></p>
+    <p>
+        <i class="devicon-linkedin-plain colored"></i>  <a href="#">Linkedin</a></p>
+    </ul>
+</section>
+
+
+
+
 </body>
 </html>

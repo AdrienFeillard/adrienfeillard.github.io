@@ -1,50 +1,596 @@
-/* General reset and styling */
+/* -----------------------------------------------------
+   General Reset & Body
+----------------------------------------------------- */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    line-height: 1.6;
     background-color: #f0f0f0;
+    color: #333;
+    overflow-x: hidden;
 }
 
-.container {
+section {
+    padding: 40px 20px;
     text-align: center;
 }
 
-/* Icon styles */
-.icon {
+/* -----------------------------------------------------
+   Hero Section
+----------------------------------------------------- */
+.hero {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #ece8ca, #ede8d0);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero h1,
+.hero h2 {
+    margin: 0;
+    white-space: nowrap; /* Prevent wrapping during deletion animation */
+    overflow: hidden;    /* Hide overflow of text during deletion */
+    display: inline-block;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.hero h2 {
     font-size: 2rem;
-    margin: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    margin-top: 30px;
 }
 
-.icon:hover {
-    transform: scale(1.2);
+.cursor {
+    display: inline-block;
+    background-color: black;
+    width: 2px;
+    height: 0em;
+    animation: blink 0.5s steps(2, start) infinite;
 }
 
-/* Optional tooltip styling for better accessibility */
-.icon::after {
-    content: attr(title);
-    position: absolute;
-    bottom: 150%; /* Adjust based on the desired position */
-    left: 50%;
-    transform: translateX(-50%);
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* -----------------------------------------------------
+   About Section
+----------------------------------------------------- */
+.about p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* -----------------------------------------------------
+   Projects Section
+----------------------------------------------------- */
+/* Container holding multiple projects */
+.project-cards {
+    display: flex;
+    flex-direction: column;  /* Stack them vertically */
+    gap: 20px;               /* Space between each card */
+    max-width: 1000px;       /* Optional max width */
+    margin: 0 auto;          /* Center horizontally */
+}
+
+/* Individual card */
+.project-card {
+    display: flex;           /* Place media + info side by side */
+    flex-wrap: wrap;         /* Allows wrapping on smaller screens */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;        /* If images are bigger than container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Media container (holds either canvas or image) */
+.project-media {
+    width: 300px;    /* Fixed width (example) */
+    height: 300px;   /* Fixed height so it stays square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;  /* Placeholder bg if no image/canvas  */
+    flex-shrink: 0;          /* Prevent it from shrinking */
+}
+
+/* Make sure images/canvas fit inside the project-media container */
+.project-media img,
+.project-media canvas {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.project-media {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+    flex-shrink: 0;
+}
+/* Info container (Title, Description, Link) */
+.project-info {
+    flex: 1;           /* Take remaining horizontal space */
+    padding: 20px;
+    text-align: left;  /* Align text to left */
+    box-sizing: border-box;
+}
+
+.project-info h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.project-info p {
+    margin: 10px 0;
+}
+
+.project-info .project-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 0.2s;
+    background-color: #e8e8e8;
+}
+
+.project-info .project-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#projects {
+    background: radial-gradient(circle, #eee3d3, #e5d5be);
+    padding: 100px 40px;
+    /* Add more styles as needed */
+}
+/* -----------------------------------------------------
+   Skills Section (Linear Icons)
+----------------------------------------------------- */
+
+#circular-skills {
+    background: radial-gradient(circle, #ece8ca, #ede8d0);
+    padding: 100px 40px;
+    /* Add more styles as needed */
+}
+
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icon-container {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Basic tooltip for .tooltip (NOT the circular version) */
+.tooltip {
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
     background-color: #333;
     color: #fff;
     padding: 5px 10px;
     border-radius: 4px;
-    font-size: 0.9rem;
-    white-space: nowrap;
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.5);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
-.icon:hover::after {
+/* Hover effect for icons in the skills section */
+.icon-container:hover i,
+.icon-container:hover img {
+    transform: scale(1.5);
+    filter: none;
+}
+
+.icon-container:hover .tooltip {
+    transform: translateX(-50%) scale(1);
     opacity: 1;
     visibility: visible;
 }
+
+/* Non-hovered icons slightly smaller or dimmer */
+.skills-icons .icon-container:not(:hover) i {
+    transform: scale(1);
+    opacity: 0.8;
+}
+
+/* -----------------------------------------------------
+   Devicon Icon Styling
+----------------------------------------------------- */
+.devicon-unrealengine-original,
+.devicon-python-plain,
+.devicon-numpy-plain,
+.devicon-pytorch-original,
+.devicon-jupyter-plain,
+.devicon-cplusplus-plain,
+.devicon-dataspell-plain,
+.devicon-eclipse-plain,
+.devicon-github-original,
+.devicon-javascript-plain,
+.devicon-latex-original,
+.devicon-matlab-plain,
+.devicon-matplotlib-plain,
+.devicon-pandas-plain,
+.devicon-r-plain,
+.devicon-rstudio-plain,
+.devicon-scikitlearn-plain,
+.devicon-html5-plain,
+.devicon-css3-plain {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    display: inline-block;
+    vertical-align: middle;
+    filter: brightness(0) saturate(0); /* Default to black and white */
+}
+
+.icon-container img {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0) saturate(0);
+}
+
+/* -----------------------------------------------------
+   Contact Section
+----------------------------------------------------- */
+/* -----------------------------------------------------
+   Contact Section
+----------------------------------------------------- */
+.contact {
+    background-color: #ffffff; /* Adjust as needed */
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333333;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #555555;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-list li:last-child {
+    margin-bottom: 0;
+}
+
+.contact-list i {
+    margin-right: 15px;
+    color: #4caf50; /* Icon color */
+    min-width: 24px; /* Ensure uniform spacing */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.contact-list a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.contact-list li:hover {
+    color: #000000;
+    transform: translateX(5px);
+}
+
+@media (max-width: 600px) {
+    .contact h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .contact-list li {
+        font-size: 1rem;
+    }
+
+    .contact-list i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+}
+
+/* -----------------------------------------------------
+   Canvas (Brain) Styling
+----------------------------------------------------- */
+#brain-canvas {
+    /* Stop absolute positioning and let it fill the container */
+    position: static;      /* or relative; just not absolute */
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;           /* Fill the parent container’s width */
+    height: 100%;          /* Fill the parent container’s height */
+    border: 2px solid #ffffff; /* optional border */
+    display: block;
+}
+
+/* Show canvas when the class is applied */
+.show-canvas #brain-canvas {
+    display: block;
+}
+
+/* -----------------------------------------------------
+   Circle Elements (No Tooltips)
+----------------------------------------------------- */
+.skills-circle {
+    position: relative;
+    width: 500px; /* Matches the largest circle */
+    height: 500px;
+    margin: 0 auto;
+}
+
+.inner-circle,
+.outer-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    border-radius: 50%;
+}
+
+.inner-circle {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent */
+
+}
+
+.outer-circle {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.05); /* Semi-transparent */
+}
+
+.middle-circle-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px; /* Midpoint between inner (200px) and outer (400px) circles */
+    height: 300px;
+    transform: translate(-50%, -50%);
+    border: 2px dashed rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.outermost-circle-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px; /* Slightly larger than the outer circle (400px) */
+    height: 500px;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* -----------------------------------------------
+   Positioning: .circular-icon-container
+   (We rely on JS to set translate(-50%, -50%).)
+----------------------------------------------- */
+.circular-icon-container {
+    position: absolute; /* crucial for JS absolute positioning */
+    z-index: 2;         /* so it's above circle borders */
+    /* DO NOT set transform here in CSS
+       Because JS sets transform = translate(...) inline */
+}
+
+/* .icon-inner is the nested element for scaling */
+.icon-inner {
+    display: inline-block;
+    transform: scale(1);               /* default size */
+    transition: transform 0.3s ease;   /* smooth animation */
+    /* You can also keep any tooltip or icon styling here if you want */
+}
+
+/* 1) Default: outside .skills-circle => scale(1) */
+.icon-inner {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+/* 2) Hovering .skills-circle but no icon hovered => scale(0.8) */
+.skills-circle:hover .icon-inner {
+    transform: scale(0.9);
+}
+
+/* 3) If ANY icon is hovered, we refine the above with :has() */
+.skills-circle:has(.circular-icon-container:hover) .icon-inner {
+    /* All icons (except the hovered one) become 0.5
+       when at least one icon is hovered. */
+    transform: scale(0.7);
+}
+
+/* 4) The hovered icon itself => scale(1.2) */
+.skills-circle:has(.circular-icon-container:hover)
+.circular-icon-container:hover .icon-inner {
+    transform: scale(1.8);
+}
+
+
+
+/* Tooltip style remains the same as you had before: */
+.circular-tooltip {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+}
+
+.circular-icon-container:hover .circular-tooltip {
+    opacity: 1;!important;
+    z-index: 9999; !important;
+    visibility: visible;
+    transform: translate(-50%, -70%) scale(0.6);
+}
+
+
+/* -----------------------------------------------------
+   Gradient Animation (If Used Anywhere Else)
+----------------------------------------------------- */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+/****************************************
+   Circle styles
+****************************************/
+.inner-circle, .middle-circle,
+.outer-circle, .outermost-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+/* Example: The inner circle might have a faint background */
+.inner-circle {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    opacity: 0;
+}
+
+/* The middle circle => black dashed style, no fill */
+.middle-circle {
+    background: none;
+    border: 2px dashed black;
+}
+
+/* The outer circle might have a faint background color */
+.outer-circle {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    opacity: 0;
+}
+
+/* The outermost circle => black dashed style, no fill */
+.outermost-circle {
+    background: none;
+    border: 2px dashed black;
+}
+
+/****************************************
+   Icon containers
+****************************************/
+.circular-icon-container {
+    transition: top 0.4s ease, left 0.4s ease, transform 0.4s ease;
+    z-index: 1; /* so icons appear above circles */
+}
+
+/* If you also do scaling on .icon-inner for hover transforms,
+   include: */
+.icon-inner {
+    transition: transform 0.3s ease;
+}
+
+/* 1) Make devicons and the MNE image black & white initially */
+.icon-inner i,
+.icon-inner img {
+    filter: brightness(0) saturate(0
+    );       /* Or brightness(0) saturate(0) */
+    opacity: 0.8;
+
+    transition: filter 0.3s ease;  /* Smooth animation */
+}
+
+/* 2) Remove the filter on hover => color icons & images */
+.icon-inner:hover i,
+.icon-inner:hover img {
+    filter: none;
+}
+
+
+.circular-icon-container.outer-icon {
+    width: 48px;
+    height: 48px;
+
+    /* Enable Flexbox */
+    display: flex;
+    justify-content: center;  /* Horizontal centering */
+    align-items: center;      /* Vertical centering */
+
+}
+
+
+.circular-icon-container.inner-icon {
+    width: 48px;
+    height: 48px;
+
+    /* Enable Flexbox */
+    align-items: center;      /* Vertical centering */
+
+
+}
+
