@@ -63,6 +63,33 @@ section {
     }
 }
 
+/* Responsive Typography for Title, About, and Contact Sections */
+@media (max-width: 600px) {
+    /* Adjust title (hero) text sizes */
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust About section text sizes */
+    .about h2 {
+        font-size: 1.8rem;
+    }
+    .about p {
+        font-size: 1rem;
+    }
+
+    /* Adjust Contact section text sizes */
+    .contact h2 {
+        font-size: 2rem;
+    }
+    .contact-list li {
+        font-size: 1rem;
+    }
+}
+
 /* -----------------------------------------------------
    About Section
 ----------------------------------------------------- */
@@ -74,23 +101,29 @@ section {
 /* -----------------------------------------------------
    Projects Section
 ----------------------------------------------------- */
-/* Container holding multiple projects */
+
+/* Container holding multiple projects (slider view) */
 .project-cards {
     display: flex;
-    flex-direction: column;  /* Stack them vertically */
-    gap: 20px;               /* Space between each card */
-    max-width: 1000px;       /* Optional max width */
-    margin: 0 auto;          /* Center horizontally */
+    transition: transform 0.5s ease;
+    max-width: 1000px; /* (Optional) keep or adjust as needed */
+    max-height: 400px;
+    margin: 0 auto;
 }
 
-/* Individual card */
 .project-card {
-    display: flex;           /* Place media + info side by side */
-    flex-wrap: wrap;         /* Allows wrapping on smaller screens */
+    /* Each slide still takes 100% of slider width, but laid out in a row */
+    min-width: 100%;
+    flex-shrink: 0;
+
+    display: flex;         /* Media on the left, text on the right */
+    align-items: flex-start;
+    gap: 20px;             /* Spacing between image and text */
+    overflow: visible;     /* Ensure text isn't clipped */
+
     background-color: #ede8d0;
     border: 1px solid #ddd;
     border-radius: 8px;
-    overflow: hidden;        /* If images are bigger than container */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -101,8 +134,11 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ddd;  /* Placeholder bg if no image/canvas  */
-    flex-shrink: 0;          /* Prevent it from shrinking */
+    background-color: #ddd; /* Placeholder bg if no image/canvas */
+    flex-shrink: 0;         /* Prevent it from shrinking */
+
+    border-radius: 8px;   /* Same as .project-card */
+    overflow: hidden;
 }
 
 /* Make sure images/canvas fit inside the project-media container */
@@ -113,30 +149,22 @@ section {
     object-fit: cover;
 }
 
-.project-media {
-    width: 300px;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ddd;
-    flex-shrink: 0;
-}
 /* Info container (Title, Description, Link) */
 .project-info {
-    flex: 1;           /* Take remaining horizontal space */
+    flex: 1;              /* Take remaining horizontal space */
     padding: 20px;
-    text-align: left;  /* Align text to left */
+    text-align: left;     /* Align text to left */
     box-sizing: border-box;
 }
 
 .project-info h3 {
     margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .project-info p {
     margin: 10px 0;
+    font-size: 0.7rem;
 }
 
 .project-info .project-link {
@@ -149,6 +177,7 @@ section {
     border-radius: 4px;
     transition: 0.2s;
     background-color: #e6e6fa;
+    font-size: 0.8rem;
 }
 
 .project-info .project-link:hover {
@@ -160,11 +189,87 @@ section {
     padding: 100px 40px;
     /* Add more styles as needed */
 }
+
+.project-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 0 60px;   /* Space for navigation arrows, if present */
+    box-sizing: border-box;
+}
+
+/* --- Desktop adjustments (screens wider than 600px) --- */
+@media (min-width: 601px) {
+    .project-card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start; /* Align at top so text is fully visible */
+
+    }
+    .project-media {
+        width: 250px;
+        height: 250px;
+        margin-right: 20px; /* space between image and text */
+    }
+    .project-info {
+        flex: 1;
+        padding: 20px;
+        text-align: left;
+        max-width: 590px;
+    }
+}
+
+/* --- Mobile adjustments (screens 600px and below) --- */
+@media (max-width: 600px) {
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-media {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        margin-bottom: 10px;
+    }
+    .project-info {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+    .project-info h3 {
+        font-size: 1.2rem;
+    }
+    .project-info p {
+        font-size: 0.9rem;
+    }
+    .project-info .project-link {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+    }
+}
+
+
+
+.project-card {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.project-card.active {
+    display: flex;
+    opacity: 1;
+}
+
+
 /* -----------------------------------------------------
    Skills Section (Linear Icons)
 ----------------------------------------------------- */
 
-#circular-skills {
+.circular-skills {
     background: radial-gradient(circle, #ece8ca, #ede8d0);
     padding: 100px 40px;
     /* Add more styles as needed */
@@ -545,7 +650,7 @@ section {
    Icon containers
 ****************************************/
 .circular-icon-container {
-    transition: top 0.4s ease, left 0.4s ease, transform 0.4s ease;
+    transition: top 0.4s ease, left 0.4s ease, transform 0.4s ease ;
     z-index: 1; /* so icons appear above circles */
 }
 
@@ -593,4 +698,52 @@ section {
 
 
 }
+
+/* Additions to your existing styles.css */
+
+/* Keyframes for Enlarge and Shrink Animation */
+@keyframes enlarge-shrink {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animation Class: Triggers the Enlarge-Shrink Animation and Removes Grayscale */
+.animate-icon {
+    animation: enlarge-shrink 0.6s forwards; /* Duration: 0.6s */
+    filter: none; /* Remove grayscale to display colored icon */
+}
+
+
+
+
+
+/* Navigation Button Styles */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(128, 0, 0, 0);
+    border: none;
+    color: rgba(80, 80, 80, 1);
+    font-size: 3rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider-btn.prev {
+    left: 10px;
+}
+
+.slider-btn.next {
+    right: 10px;
+}
+
 

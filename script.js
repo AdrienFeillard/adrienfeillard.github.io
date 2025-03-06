@@ -656,32 +656,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Normalize wheel event
-document.addEventListener('wheel', function(event) {
-    event.preventDefault(); // Prevent the default scrolling behavior
+document.addEventListener('DOMContentLoaded', function () {
+    const projectCards = document.querySelector('.project-cards');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    const nextBtn = document.querySelector('.slider-btn.next');
+    const totalCards = document.querySelectorAll('.project-card').length;
+    let currentIndex = 0;
 
-    // Normalize delta values
-    const delta = Math.sign(event.deltaY); // Normalize to -1, 0, or 1
-    const scrollAmount = Math.abs(event.deltaY) > 100 ? 100 : Math.abs(event.deltaY); // Limit scroll step
-
-    // Custom scrolling dynamics
-    if (delta > 0) {
-        slideNext(scrollAmount); // Slide to the next section
-    } else if (delta < 0) {
-        slidePrevious(scrollAmount); // Slide to the previous section
+    function updateSlider() {
+        projectCards.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
+
+    prevBtn.addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        updateSlider();
+    });
+
+    nextBtn.addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % totalCards;
+        updateSlider();
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const projectCards = document.querySelectorAll('.project-card');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    const nextBtn = document.querySelector('.slider-btn.next');
+    const totalCards = projectCards.length;
+    let currentIndex = 0;
+
+    function updateSlider() {
+        // Remove active class from all cards
+        projectCards.forEach((card, index) => {
+            if (index === currentIndex) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        });
+    }
+
+    prevBtn.addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        updateSlider();
+    });
+
+    nextBtn.addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % totalCards;
+        updateSlider();
+    });
+
+    // Initialize the slider with the first card visible
+    updateSlider();
 });
 
-// Example sliding functions
-function slideNext(scrollAmount) {
-    // Your logic to move to the next section
-    console.log('Sliding Next:', scrollAmount);
-    // Update your section animation here
-}
 
-function slidePrevious(scrollAmount) {
-    // Your logic to move to the previous section
-    console.log('Sliding Previous:', scrollAmount);
-    // Update your section animation here
-}
 

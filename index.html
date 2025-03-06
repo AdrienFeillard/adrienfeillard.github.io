@@ -10,11 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- Include GLTFLoader from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
     <script src="script.js" defer></script>
-
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -27,12 +24,8 @@
 
 <header class="hero">
     <h1 id="title" style="color: rgba(80,80,80,1);">Adrien Feillard<span class=" cursor"></span></h1>
-    <h2 id="subtitle" style="color: rgba(80,80,80,1);">MSc student in Neuro-X at EPFL
-        <span class=" cursor"></span></h2>
-
+    <h2 id="subtitle" style="color: rgba(80,80,80,1);">MSc student in Neuro-X at EPFL<span class=" cursor"></span></h2>
 </header>
-
-
 
 <!-- About Me Section -->
 <section class="about">
@@ -40,17 +33,97 @@
     <p style="color: rgba(80,80,80,1);">
         Briefly introduce yourself here. Share your background, interests, and what makes you unique.
         Include any relevant details about your education, experience, and aspirations.
-
     </p>
-
-
+</section>
+<section id="projects" class="projects">
+    <h2 style="color: rgba(80,80,80,1);">Projects</h2>
+    <div class="project-slider">
+        <!-- All project cards wrapped in one container -->
+        <div class="project-cards">
+            <!-- First Project: Wrap it with .project-card -->
+            <div class="project-card">
+                <div class="project-media" id="brain-project-media">
+                    <canvas id="brain-canvas"></canvas>
+                </div>
+                <div class="project-info">
+                    <h3 style="color: rgba(80,80,80,1);">Laboratory Project (ongoing)</h3>
+                    <p style="color: rgba(80,80,80,1);">
+                        This project focuses on creating a predictive framework for visual skills thresholds
+                        using EEG data and steady-state visual evoked potentials (SSVEPs). Key contributions
+                        include EEG data visualization, preprocessing, and filtering; SSVEP signal extraction;
+                        development of machine learning algorithms for predictive modeling; and organization of
+                        experimental setups. The work advances objective, data-driven approaches to understanding
+                        and predicting visual performance.
+                    </p>
+                    <a href="https://github.com/AdrienFeillard/Semester-Project-1-LPSY" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> Github <i class="devicon-github-plain colored"></i>
+                    </a>
+                    <a href="https://www.epfl.ch/labs/lpsy/" target="_blank" class="project-link">
+                        Laboratory of Psychophysics (LPSY), EPFL Brain-Mind Institute
+                    </a>
+                </div>
+            </div>
+            <!-- PROJECT 2 remains unchanged -->
+            <div class="project-card">
+                <div class="project-media">
+                    <img src="images/ML.webp" alt="Project 2 Screenshot" />
+                </div>
+                <div class="project-info">
+                    <h3 style="color: rgba(80,80,80,1);">
+                        Machine Learning Project "Efficiency of Markerless Pose Estimation"
+                    </h3>
+                    <p style="color: rgba(80,80,80,1);">
+                        This project evaluates the accuracy of BlazePose, a markerless pose estimation system,
+                        for classifying exercises and identifying errors in physiotherapy movements. Using machine
+                        learning models such as neural networks, GRU, CNN, and Random Forest, the analysis demonstrates
+                        BlazePose's potential for affordable and effective home-based physiotherapy.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/CS-433/ml-project-2-clementines" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Github <i class="devicon-github-plain colored"></i>
+                        </a>
+                        <a href="pdfs/report_project2_ML.pdf" target="_blank" class="project-link">
+                            <i class="fas fa-file-pdf"></i> Project report
+                        </a>
+                        <a href="https://edu.epfl.ch/coursebook/en/machine-learning-CS-433" target="_blank" class="project-link">
+                            Machine Learning (CS-433)
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- PROJECT 3 remains unchanged -->
+            <div class="project-card">
+                <div class="project-media">
+                    <img src="images/a.webp" alt="Project 3 Screenshot" />
+                </div>
+                <div class="project-info">
+                    <h3 style="color: rgba(80,80,80,1);">Applied Data Analysis Project</h3>
+                    <p style="color: rgba(80,80,80,1);">
+                        "Every Season is Beerable" is a comprehensive data analysis project that examines seasonal
+                        trends in beer consumption using user ratings from RateBeer (2003–2016). The analysis focuses
+                        on three popular beer styles—IPA, Pilsener, and Belgian Strong Ale—highlighting seasonal
+                        preferences and patterns through detailed data visualization and statistical insights.
+                    </p>
+                    <a href="https://github.com/shobashu/ChatChuiPT.github.io" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> Github <i class="devicon-github-plain colored"></i>
+                    </a>
+                    <a href="https://shobashu.github.io/ChatChuiPT.github.io/" target="_blank" class="project-link">
+                        Project's website
+                    </a>
+                    <a href="https://edu.epfl.ch/coursebook/en/applied-data-analysis-CS-401" target="_blank" class="project-link">
+                        Applied Data Analysis (CS-401)
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Navigation buttons -->
+        <button class="slider-btn prev">‹</button>
+        <button class="slider-btn next">›</button>
+    </div>
 </section>
 
 
-
-
-
-<section id="circular-skills">
+<section class="circular-skills">
 
     <h2 style="color: rgba(80,80,80,1);">Skills</h2>
     <div class="skills-circle" style="position: relative;" style="color: rgba(80,80,80,1);">
@@ -219,100 +292,6 @@
 
     </div>
 </section>
-
-
-<section id="projects" class="projects">
-    <h2 style="color: rgba(80,80,80,1);">Projects</h2>
-
-    <div class="project-cards">
-
-        <!-- PROJECT 1: Brain Visualization -->
-        <div class="project-card">
-            <!-- Project media container -->
-            <div class="project-media" id="brain-project-media">
-                <!-- Canvas goes here -->
-                <canvas id="brain-canvas"></canvas>
-            </div>
-
-            <div class="project-info">
-                <h3 style="color: rgba(80,80,80,1);"> Laboratory Project (ongoing)</h3>
-                <p style="color: rgba(80,80,80,1);">
-                    This project focuses on creating a predictive framework for visual skills thresholds
-                    using EEG data and steady-state visual evoked potentials (SSVEPs). Key contributions
-                    include EEG data visualization, preprocessing, and filtering; SSVEP signal extraction;
-                    development of machine learning algorithms for predictive modeling; and organization of
-                    experimental setups. The work advances objective, data-driven approaches to understanding
-                    and predicting visual performance.
-                </p>
-                  <a href="https://github.com/AdrienFeillard/Semester-Project-1-LPSY" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> Github <i class="devicon-github-plain colored"></i>
-                </a>
-                <a href="https://www.epfl.ch/labs/lpsy/" target="_blank" class="project-link">
-                    Laboratory of Psychophysics (LPSY), EPFL Brain-Mind Institute
-                </a>
-            </div>
-        </div>
-
-        <!-- PROJECT 2: Square Image Placeholder -->
-        <div class="project-card">
-            <div class="project-media">
-                <!-- Square image placeholder (same dimension as your canvas) -->
-                <img src="images/ML.webp" alt="Project 2 Screenshot" />
-            </div>
-            <div class="project-info">
-                <h3 style="color: rgba(80,80,80,1);">Machine Learning Project "Efficiency of Markerless Pose Estimation"
-                </h3>
-                <p style="color: rgba(80,80,80,1);">
-                    This project evaluates the accuracy of BlazePose, a markerless pose estimation system,
-                    for classifying exercises and identifying errors in physiotherapy movements. Using machine
-                    learning models such as neural networks, GRU, CNN, and Random Forest, the analysis demonstrates
-                    BlazePose's potential for affordable and effective home-based physiotherapy.
-                </p>
-                <div class="project-links">
-                    <a href="https://github.com/CS-433/ml-project-2-clementines" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> Github <i class="devicon-github-plain colored"></i>
-                    </a>
-                    <a href="pdfs/report_project2_ML.pdf" target="_blank" class="project-link">
-                        <i class="fas fa-file-pdf"></i> Project report
-                    </a>
-                    <a href="https://edu.epfl.ch/coursebook/en/machine-learning-CS-433" target="_blank" class="project-link">
-                        Machine Learning (CS-433)
-                    </a>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- PROJECT 3: Another Square Image Placeholder -->
-        <div class="project-card">
-            <div class="project-media">
-                <img src="images/a.webp" alt="Project 3 Screenshot" />
-            </div>
-            <div class="project-info">
-                <h3 style="color: rgba(80,80,80,1);">Applied Data Analysis Project</h3>
-                <p style="color: rgba(80,80,80,1);">
-                    "Every Season is Beerable" is a comprehensive data analysis project that examines seasonal
-                    trends in beer consumption using user ratings from RateBeer (2003–2016). The analysis focuses
-                    on three popular beer styles—IPA, Pilsener, and Belgian Strong Ale—highlighting seasonal
-                    preferences and patterns through detailed data visualization and statistical insights.
-                </p>
-                <a href="https://github.com/shobashu/ChatChuiPT.github.io" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> Github <i class="devicon-github-plain colored"></i>
-                </a>
-                <a href="https://shobashu.github.io/ChatChuiPT.github.io/" target="_blank" class="project-link">
-                    Project's website
-                </a>
-                <a href="https://edu.epfl.ch/coursebook/en/applied-data-analysis-CS-401" target="_blank" class="project-link">
-                    Applied Data Analysis (CS-401)
-                </a>
-            </div>
-        </div>
-
-        <!-- Add more project-cards as needed -->
-
-    </div>
-</section>
-
 <!-- Contact Section -->
 <section class="contact">
     <h2>Contact Information</h2>
