@@ -103,9 +103,49 @@ section {
     margin: 0 auto;
 }
 
-/* -----------------------------------------------------
-   Projects Section
------------------------------------------------------ */
+
+/* Flex container to manage spacing between the image links */
+.about-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between the two links */
+}
+
+.about-links p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.about-image {
+    border: 2px solid #f2e530; /* initial border color */
+    border-radius: 5px;        /* makes the container rounded */
+    overflow: hidden;          /* ensures the image stays within the rounded shape */
+    display: inline-block;
+    transition: border-color 0.3s ease; /* smooth transition for border color change */
+    padding: 5px;              /* optional padding around the image */
+}
+
+.about-image img {
+    border: 0px solid #800020; /* initial border color */
+    border-radius: 2px;
+    display: block;
+    width: 100px;              /* adjust as needed */
+    height: 100px;             /* adjust as needed */
+    object-fit: cover;         /* ensures the image covers the container */
+    filter: grayscale(100%);
+    transition: filter 0.2s ease;
+}
+
+.about-image:hover {
+    border-color: rgba(80, 80, 80, 1);     /* border color on hover */
+
+}
+
+.about-image img:hover{
+    filter: grayscale(0);
+}
+    /* -----------------------------------------------------
+       Projects Section
+    ----------------------------------------------------- */
 
 .projects{
 
