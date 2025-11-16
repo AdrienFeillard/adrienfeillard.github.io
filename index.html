@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+
+
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <!-- Include Three.js from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -18,6 +21,7 @@
             integrity="sha512-pap06Z6qdV5kCF/Dj6eDGJzb9B2MxaGx6BdxI0dg3TJKtBSO0UeT4JXtmSYjWnXZ2j2FG9+HP9LO6QKkUXa2vA=="
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
+
     />
 </head>
 <body>
@@ -67,12 +71,37 @@
         <!-- All project cards wrapped in one container -->
         <div class="project-cards">
             <!-- First Project: Wrap it with .project-card -->
+             <div class="project-card">
+                <div class="project-media">
+                    <img src="images/yneuro_logo.jpeg" alt="yneuro" />
+                </div>
+                <div class="project-info">
+                    <h3 style="color: rgba(80,80,80,1);">
+                        Internship at YNeuro (Sep 2025 - Feb 2026)
+                    </h3>
+                    <p style="color: rgba(80,80,80,1);">
+                        During my five-month internship at YNeuro, a neurotechnology startup developping a solution for 
+                        EEG signal authentification, I contributed to the development and optimization
+                        of EEG data processing with a strong focus on metadata extraction, curation, validation and montage alignement.
+                        This experience allowed me to apply my academic knowledge in a practical setting, collaborate with a team
+                        of experts, expand my skills and knowledge in collaborative coding and gain insights into the challenges and innovations in the neurotechnology industry.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://www.linkedin.com/company/yneuro/posts/?feedView=all" target="_blank" class="project-link">
+                            <i class="fab fa-linkedin"></i> Linkedin <i class="devicon-linkedin-plain"></i>
+                        </a>
+                        <a href="https://www.yneuro.com/" target="_blank" class="project-link">
+                            <i class="fas fa-file-pdf"></i> Website
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div class="project-card">
                 <div class="project-media" id="brain-project-media">
                     <canvas id="brain-canvas"></canvas>
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">Laboratory Project (ongoing, NX-492)</h3>
+                    <h3 style="color: rgba(80,80,80,1);">Laboratory Project (Sep 2024 - July 2025, NX-492)</h3>
                     <p style="color: rgba(80,80,80,1);">
                         This project focuses on creating a predictive framework for visual skills thresholds
                         using EEG data and steady-state visual evoked potentials (SSVEPs). Key contributions
@@ -127,7 +156,9 @@
                         Effect of Adaptive Noise Injection in Convolutional Neural Network Training (Optimization for Machine Learning CS-439)
                     </h3>
                     <p style="color: rgba(80,80,80,1);">
-                        As part of our group project, we explored the impact of noise injection on Convolutional Neural Networks and Resnet18 model trained for image classification on the CIFAR-10 dataset. Our report details the different models and methods, specifically the noise injection methodology that we implemented.
+                        As part of our group project, we explored the impact of noise injection on Convolutional Neural Networks
+                        and Resnet18 model trained for image classification on the CIFAR-10 dataset. Our report details the 
+                        different models and methods, specifically the noise injection methodology that we implemented.
                     </p>
                     <div class="project-links">
                         <a href="https://github.com/AdrienFeillard/OptML_project" target="_blank" class="project-link">
@@ -356,6 +387,21 @@
             <span class="circular-tooltip">Pandas</span>
           </span>
         </span>
+
+        <span class="circular-icon-container inner-icon">
+            <span class="icon-inner">
+                <i class="devicon-vscode-plain colored"></i>
+                <span class="circular-tooltip">VS Code</span>
+            </span>
+        </span>
+
+        <span class="circular-icon-container inner-icon">
+            <span class="icon-inner">
+                <img width="48" height="48" src="https://img.icons8.com/nolan/64/notion.png" alt="notion"/>
+                <span class="circular-tooltip">Notion</span>
+            </span>
+        </span>
+
         <span class="circular-icon-container inner-icon">
             <span class="icon-inner">
                 <i class="devicon-dataspell-plain colored"></i>
@@ -398,6 +444,21 @@
             </span>
         </span>
 
+        
+        
+        <span class="circular-icon-container inner-icon">
+            <span class="icon-inner">
+                <i class="devicon-keras-plain colored"></i>
+                <span class="circular-tooltip">Keras</span>
+            </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+          <span class="icon-inner">
+            <span class="icon-text" style="font-family: Arial, sans-serif; font-size: 10px; line-height: 1.2; ">
+                Familiar </span>
+          </span>
+        </span>
         <!-- Add more inner-icon as needed -->
 
         <!-- Icons on outer circle -->
@@ -408,8 +469,27 @@
           </span>
         </span>
 
+        <span class="circular-icon-container outer-icon">
+            <span class="icon-inner">
+                <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
 
+                <span class="circular-tooltip">AWS</span>
+            </span>
+        </span>
 
+        <span class="circular-icon-container outer-icon">
+            <span class="icon-inner">
+                <i class="devicon-anaconda-original colored"></i>
+                <span class="circular-tooltip">Anaconda</span>
+            </span>
+        </span>
+        
+        <span class="circular-icon-container outer-icon">
+            <span class="icon-inner">
+                <i class="devicon-bash-plain colored"></i>
+                <span class="circular-tooltip">Bash</span>
+            </span>
+        </span>
         <span class="circular-icon-container outer-icon">
             <span class="icon-inner">
                 <i class="devicon-r-plain colored"></i>
@@ -463,8 +543,6 @@
             </span>
         </span>
 
-
-
         <span class="circular-icon-container outer-icon">
           <span class="icon-inner">
             <i class="devicon-cplusplus-plain colored"></i>
@@ -483,11 +561,7 @@
           </span>
         </span>
 
-        <span class="circular-icon-container outer-icon">
-          <span class="icon-inner">
-            <span class="icon-text" style="font-family: Arial, sans-serif; font-size: 10px; line-height: 1.2; ">Familiar </span>
-          </span>
-        </span>
+        
 
     </div>
 </section>

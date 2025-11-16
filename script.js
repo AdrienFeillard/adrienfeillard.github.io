@@ -538,9 +538,9 @@ function setCircleRadii({ inner, middle, outer, outermost }) {
 
     // Reposition icons
     // .inner-icon => inner radius
-    arrangeIconsInCircle('.skills-circle .inner-icon', inner, -3.5*Math.PI/11);
+    arrangeIconsInCircle('.skills-circle .inner-icon', inner, -5*Math.PI/14);
     // .outer-icon => outer radius
-    arrangeIconsInCircle('.skills-circle .outer-icon', outer, -3*Math.PI/10);
+    arrangeIconsInCircle('.skills-circle .outer-icon', outer, -6.5*Math.PI/13);
 
     // Update the currentRadii if needed
     currentRadii.inner     = inner;
@@ -580,10 +580,10 @@ function arrangeIconsInCircle(selector, radius, offsetAngle = 0) {
  ****************************************************/
 function restoreDefaultRadii() {
     setCircleRadii({
-        inner: DEFAULT_INNER_RADIUS,
-        middle: DEFAULT_MIDDLE_RADIUS,
-        outer: DEFAULT_OUTER_RADIUS,
-        outermost: DEFAULT_OUTERMOST_RADIUS
+        inner: DEFAULT_INNER_RADIUS*1.3,
+        middle: DEFAULT_MIDDLE_RADIUS*1.3,
+        outer: DEFAULT_OUTER_RADIUS*1.3,
+        outermost: DEFAULT_OUTERMOST_RADIUS*1.3
     });
 }
 
@@ -593,10 +593,10 @@ function restoreDefaultRadii() {
 document.addEventListener('DOMContentLoaded', () => {
     // a) Initialize everything to default
     setCircleRadii({
-        inner: DEFAULT_INNER_RADIUS,
-        middle: DEFAULT_MIDDLE_RADIUS,
-        outer: DEFAULT_OUTER_RADIUS,
-        outermost: DEFAULT_OUTERMOST_RADIUS
+        inner: DEFAULT_INNER_RADIUS*1.3,
+        middle: DEFAULT_MIDDLE_RADIUS*1.3,
+        outer: DEFAULT_OUTER_RADIUS*1.3,
+        outermost: DEFAULT_OUTERMOST_RADIUS*1.3
     });
 
     // b) When the mouse enters .skills-circle => shrink everything
@@ -605,10 +605,10 @@ document.addEventListener('DOMContentLoaded', () => {
         skillsCircle.addEventListener('mouseenter', () => {
             // reduce each circle’s radius by ~10%
             setCircleRadii({
-                inner: DEFAULT_INNER_RADIUS * 0.95,
-                middle: DEFAULT_MIDDLE_RADIUS * 0.95,
-                outer: DEFAULT_OUTER_RADIUS * 0.95,
-                outermost: DEFAULT_OUTERMOST_RADIUS * 0.95
+                inner: DEFAULT_INNER_RADIUS * 1.,
+                middle: DEFAULT_MIDDLE_RADIUS * 1.05,
+                outer: DEFAULT_OUTER_RADIUS * 1.1,
+                outermost: DEFAULT_OUTERMOST_RADIUS * 1.15
             });
         });
         // c) On mouseleave => restore default
@@ -625,10 +625,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.circular-icon-container.inner-icon').forEach(icon => {
         icon.addEventListener('mouseenter', () => {
             setCircleRadii({
-                inner: DEFAULT_INNER_RADIUS * 0.9,    // no change
-                middle: DEFAULT_MIDDLE_RADIUS * 1.05, // bigger
-                outer: DEFAULT_OUTER_RADIUS * 0.9,    // slightly bigger
-                outermost: DEFAULT_OUTERMOST_RADIUS * 0.81 // smaller
+                inner: DEFAULT_INNER_RADIUS * 1.4,    // no change
+                middle: DEFAULT_MIDDLE_RADIUS * 1.45, // bigger
+                outer: DEFAULT_OUTER_RADIUS * 1.25,    // slightly bigger
+                outermost: DEFAULT_OUTERMOST_RADIUS * 1.15 // smaller
             });
         });
         icon.addEventListener('mouseleave', () => {
@@ -644,10 +644,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.circular-icon-container.outer-icon').forEach(icon => {
         icon.addEventListener('mouseenter', () => {
             setCircleRadii({
-                inner: DEFAULT_INNER_RADIUS * 0.9,      // smaller
-                middle: DEFAULT_MIDDLE_RADIUS * 0.95,    // smaller
-                outer: DEFAULT_OUTER_RADIUS * 1.02,      // no change
-                outermost: DEFAULT_OUTERMOST_RADIUS * 1.1 // bigger
+                inner: DEFAULT_INNER_RADIUS * 0.9,    // no change
+                middle: DEFAULT_MIDDLE_RADIUS * 1.05, // bigger
+                outer: DEFAULT_OUTER_RADIUS * 1.0,    // slightly bigger
+                outermost: DEFAULT_OUTERMOST_RADIUS * 1.0 // smaller
             });
         });
         icon.addEventListener('mouseleave', () => {
