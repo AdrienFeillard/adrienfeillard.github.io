@@ -1,0 +1,22 @@
+/* -----------------------------------------------------
+   CSS Custom Properties (Design Tokens)
+----------------------------------------------------- */
+:root {
+    --color-primary: rgba(80, 80, 80, 1);
+    --color-accent: #f2e530;
+    --color-accent-light: #fff57e;
+    --color-white: #ffffff;
+    --color-bg: #ffffff;
+    --color-text: #333;
+    --color-link-hover: #cd1313;
+    --color-card-shadow: rgba(0, 0, 0, 0.1);
+    --color-tooltip-bg: #333;
+    --color-tooltip-text: #fff;
+    --color-gray-light: rgb(221, 221, 221);
+
+    --font-family: Arial, sans-serif;
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --border-radius: 8px;
+}

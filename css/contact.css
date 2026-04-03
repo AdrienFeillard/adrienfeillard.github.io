@@ -1,0 +1,68 @@
+/* -----------------------------------------------------
+   Contact Section
+----------------------------------------------------- */
+.contact {
+    background: var(--color-accent);
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 -4px 6px var(--color-card-shadow);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #555555;
+    transition: transform var(--transition-normal), color var(--transition-normal);
+}
+
+.contact-list li:last-child {
+    margin-bottom: 0;
+}
+
+.contact-list i {
+    margin-right: 15px;
+    color: var(--color-primary);
+    min-width: 24px;
+    font-size: 1.5rem;
+    transition: color var(--transition-normal);
+}
+
+.contact-list a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.contact-list a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+.contact-list li:hover {
+    color: #000000;
+    transform: translateX(5px);
+}
+
+@media (max-width: 600px) {
+    .contact h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    .contact-list li { font-size: 1rem; }
+    .contact-list i  { margin-right: 10px; font-size: 1.2rem; }
+}

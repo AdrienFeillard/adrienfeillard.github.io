@@ -5,36 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-
-
-
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <!-- Include Three.js from CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- Include GLTFLoader from CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <script src="script.js" defer></script>
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            integrity="sha512-pap06Z6qdV5kCF/Dj6eDGJzb9B2MxaGx6BdxI0dg3TJKtBSO0UeT4JXtmSYjWnXZ2j2FG9+HP9LO6QKkUXa2vA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    />
+    <!-- App scripts -->
+    <script src="js/scroll-camera.js" defer></script>
+    <script src="js/hero-animation.js" defer></script>
+    <script src="js/skills-circle.js" defer></script>
+    <script src="js/slider.js" defer></script>
 </head>
 <body>
 
 <header class="hero">
-    <h1 id="title" style="color: rgba(80,80,80,1);">Adrien Feillard<span class=" cursor"></span></h1>
-    <h2 id="subtitle" style="color: rgba(80,80,80,1);">MSc student in Neuro-X at EPFL<span class=" cursor"></span></h2>
+    <h1 id="title" class="text-primary">Adrien Feillard<span class="cursor"></span></h1>
+    <h2 id="subtitle" class="text-primary">MSc student in Neuro-X at EPFL<span class="cursor"></span></h2>
 </header>
 
 <!-- About Me Section -->
 <section class="about">
-    <h2 style="color: rgba(80,80,80,1);">About Me</h2>
-    <p style="color: rgba(80,80,80,1);">
+    <h2 class="text-primary">About Me</h2>
+    <p class="text-primary">
         I'm Adrien, an M.Sc. student in Neuro-X at the Ecole Polytechnique Fédérale de Lausanne (EPFL). I first did my
         Bachelor in Life Sciences and then switched to the Master in Neuro-X. This master's programme aims to provide
         students from different backgrounds with a broad and universal training in: foundations of neuroscience,
@@ -43,19 +34,16 @@
     <div class="about-links">
         <a href="https://www.epfl.ch/schools/sv/" target="_blank" rel="noopener noreferrer">
             <div class="about-image">
-                <img src="images/sv_2.png" alt="Link description" style="width: 230px; height: auto;">
+                <img src="images/sv_2.png" alt="EPFL School of Life Sciences" style="width: 230px; height: auto;">
             </div>
         </a>
-
         <a href="https://www.epfl.ch/education/master/programs/neuro-x/" target="_blank" rel="noopener noreferrer">
             <div class="about-image">
-                <img src="images/Neuro-x.png" alt="Link description" style="width: 100px; height: auto;">
+                <img src="images/Neuro-x.png" alt="EPFL Neuro-X Master Program" style="width: 100px; height: auto;">
             </div>
         </a>
-
-
     </div>
-    <p style="color: rgba(80,80,80,1);">
+    <p class="text-primary">
         Throughout my curriculum I have worked on many different projects, summarised below, with a strong focus on
         programming projects with biological background problems in various programming languages. I also like to step
         out of my comfort zone and learn new skills by working on extra-curricular projects such as this website,
@@ -66,21 +54,18 @@
 
 
 <section id="projects" class="projects">
-    <h2 style="color: rgba(80,80,80,1);">Projects</h2>
+    <h2 class="text-primary">Projects</h2>
     <div class="project-slider">
-        <!-- All project cards wrapped in one container -->
         <div class="project-cards">
-            <!-- First Project: Wrap it with .project-card -->
-             <div class="project-card">
+
+            <div class="project-card">
                 <div class="project-media">
-                    <img src="images/yneuro_logo.jpeg" alt="yneuro" width="400" height="400"/>
+                    <img src="images/yneuro_logo.jpeg" alt="YNeuro logo" width="400" height="400"/>
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">
-                        Internship at YNeuro (Sep 2025 - Feb 2026)
-                    </h3>
-                    <p style="color: rgba(80,80,80,1);">
-                        During my five-month internship at YNeuro, a neurotechnology startup developping a solution for 
+                    <h3 class="text-primary">Internship at YNeuro (Sep 2025 - Feb 2026)</h3>
+                    <p class="text-primary">
+                        During my five-month internship at YNeuro, a neurotechnology startup developping a solution for
                         EEG signal authentification, I contributed to the development and optimization
                         of EEG data processing with a strong focus on metadata extraction, curation, validation and montage alignement.
                         This experience allowed me to apply my academic knowledge in a practical setting, collaborate with a team
@@ -88,21 +73,22 @@
                     </p>
                     <div class="project-links">
                         <a href="https://www.linkedin.com/company/yneuro/posts/?feedView=all" target="_blank" class="project-link">
-                            <i class="fab fa-linkedin"></i> Linkedin <i class="devicon-linkedin-plain"></i>
+                            <i class="fab fa-linkedin"></i> Linkedin
                         </a>
                         <a href="https://www.yneuro.com/" target="_blank" class="project-link">
-                            <i class="fas fa-file-pdf"></i> Website
+                            <i class="fas fa-globe"></i> Website
                         </a>
                     </div>
                 </div>
             </div>
+
             <div class="project-card">
                 <div class="project-media" id="brain-project-media">
-                    <canvas id="brain-canvas"></canvas>
+                    <img src="images/placeholder-brain.svg" alt="EEG predictive framework for visual skills" />
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">Laboratory Project (Sep 2024 - July 2025, NX-492)</h3>
-                    <p style="color: rgba(80,80,80,1);">
+                    <h3 class="text-primary">Laboratory Project (Sep 2024 - July 2025, NX-492)</h3>
+                    <p class="text-primary">
                         This project focuses on creating a predictive framework for visual skills thresholds
                         using EEG data and steady-state visual evoked potentials (SSVEPs). Key contributions
                         include EEG data visualization, preprocessing, and filtering; SSVEP signal extraction;
@@ -111,23 +97,21 @@
                         and predicting visual performance.
                     </p>
                     <a href="https://github.com/AdrienFeillard/Semester-Project-1-LPSY" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> Github <i class="devicon-github-plain colored"></i>
+                        <i class="fab fa-github"></i> Github
                     </a>
                     <a href="https://www.epfl.ch/labs/lpsy/" target="_blank" class="project-link">
                         Laboratory of Psychophysics (LPSY), EPFL Brain-Mind Institute
                     </a>
                 </div>
             </div>
-            <!-- PROJECT 2 remains unchanged -->
+
             <div class="project-card">
                 <div class="project-media">
-                    <img src="images/blazpose.png" alt="Project 2 Screenshot" />
+                    <img src="images/blazpose.png" alt="BlazePose markerless pose estimation" />
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">
-                        Machine Learning Project "Efficiency of Markerless Pose Estimation" (Machine learning CS-433)
-                    </h3>
-                    <p style="color: rgba(80,80,80,1);">
+                    <h3 class="text-primary">Machine Learning Project "Efficiency of Markerless Pose Estimation" (Machine learning CS-433)</h3>
+                    <p class="text-primary">
                         This project evaluates the accuracy of BlazePose, a markerless pose estimation system,
                         for classifying exercises and identifying errors in physiotherapy movements. Using machine
                         learning models such as neural networks, GRU, CNN, and Random Forest, the analysis demonstrates
@@ -135,7 +119,7 @@
                     </p>
                     <div class="project-links">
                         <a href="https://github.com/AdrienFeillard/ML_project" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> Github <i class="devicon-github-plain colored"></i>
+                            <i class="fab fa-github"></i> Github
                         </a>
                         <a href="pdfs/report_project2_ML.pdf" target="_blank" class="project-link">
                             <i class="fas fa-file-pdf"></i> Project report
@@ -149,20 +133,18 @@
 
             <div class="project-card">
                 <div class="project-media">
-                    <img src="images/optml.png" alt="Project 2 Screenshot" />
+                    <img src="images/optml.png" alt="Adaptive noise injection in CNN training" />
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">
-                        Effect of Adaptive Noise Injection in Convolutional Neural Network Training (Optimization for Machine Learning CS-439)
-                    </h3>
-                    <p style="color: rgba(80,80,80,1);">
+                    <h3 class="text-primary">Effect of Adaptive Noise Injection in Convolutional Neural Network Training (Optimization for Machine Learning CS-439)</h3>
+                    <p class="text-primary">
                         As part of our group project, we explored the impact of noise injection on Convolutional Neural Networks
-                        and Resnet18 model trained for image classification on the CIFAR-10 dataset. Our report details the 
+                        and Resnet18 model trained for image classification on the CIFAR-10 dataset. Our report details the
                         different models and methods, specifically the noise injection methodology that we implemented.
                     </p>
                     <div class="project-links">
                         <a href="https://github.com/AdrienFeillard/OptML_project" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> Github <i class="devicon-github-plain colored"></i>
+                            <i class="fab fa-github"></i> Github
                         </a>
                         <a href="pdfs/OptiML___Project.pdf" target="_blank" class="project-link">
                             <i class="fas fa-file-pdf"></i> Project report
@@ -173,21 +155,21 @@
                     </div>
                 </div>
             </div>
-            <!-- PROJECT 3 remains unchanged -->
+
             <div class="project-card">
                 <div class="project-media">
-                    <img src="images/ada.png" alt="Project 3 Screenshot" />
+                    <img src="images/ada.png" alt="Beer consumption data analysis" />
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);"> Every Season is Beerable (Applied Data Analysis CS-401)</h3>
-                    <p style="color: rgba(80,80,80,1);">
+                    <h3 class="text-primary">Every Season is Beerable (Applied Data Analysis CS-401)</h3>
+                    <p class="text-primary">
                         "Every Season is Beerable" is a comprehensive data analysis project that examines seasonal
-                        trends in beer consumption using user ratings from RateBeer (2003–2016). The analysis focuses
+                        trends in beer consumption using user ratings from RateBeer (2003-2016). The analysis focuses
                         on three popular beer styles—IPA, Pilsener, and Belgian Strong Ale—highlighting seasonal
                         preferences and patterns through detailed data visualization and statistical insights.
                     </p>
                     <a href="https://github.com/AdrienFeillard/ADA_2024" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> Github <i class="devicon-github-plain colored"></i>
+                        <i class="fab fa-github"></i> Github
                     </a>
                     <a href="https://shobashu.github.io/ChatChuiPT.github.io/" target="_blank" class="project-link">
                         Project's website
@@ -200,13 +182,11 @@
 
             <div class="project-card">
                 <div class="project-media">
-                    <img src="images/Cribriform_plate_and_Olfactory_nerve_-_animation.gif" alt="Project 2 Screenshot" />
+                    <img src="images/Cribriform_plate_and_Olfactory_nerve_-_animation.gif" alt="Olfactory bulb neural interface" />
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">
-                        Implantable device for assisting dementia patients through the stimulation of the olfactory bulb (Neural Interface NX-422)
-                    </h3>
-                    <p style="color: rgba(80,80,80,1);">
+                    <h3 class="text-primary">Implantable device for assisting dementia patients through the stimulation of the olfactory bulb (Neural Interface NX-422)</h3>
+                    <p class="text-primary">
                         Our report presents a 32-channel flexible neural interface designed for dementia patients. Targeting the olfactory bulb for both recording and stimulation, the implant uses µECoG-like electrodes on a flexible polyimide substrate with Parylene C encapsulation for optimal conformity and minimal invasiveness. Low-power electronics and wireless power transmission support efficient operation, while a tailored Draf IIb surgical procedure ensures safe implantation.
                     </p>
                     <div class="project-links">
@@ -222,13 +202,11 @@
 
             <div class="project-card">
                 <div class="project-media">
-                    <img src="images/cad.jpg" alt="Project 2 Screenshot" />
+                    <img src="images/cad.jpg" alt="Coronary artery disease GWAS" />
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">
-                        Genome-Wide Association Study of Coronary Artery Disease (Applied Biostatistics MATH-493)
-                    </h3>
-                    <p style="color: rgba(80,80,80,1);">
+                    <h3 class="text-primary">Genome-Wide Association Study of Coronary Artery Disease (Applied Biostatistics MATH-493)</h3>
+                    <p class="text-primary">
                         As part of the course I worked on genome-wide association study (GWAS) of coronary artery disease (CAD) in 1401 patients using 861,473 SNPs. Rigorous quality control, exploratory data analysis, and principal components analysis were applied to adjust for population stratification. Logistic regression models—accounting for age, sex, lipid levels, and ancestry—revealed significant associations, with Manhattan and Q-Q plots highlighting key SNPs such as rs4957723 and rs17160628.
                     </p>
                     <div class="project-links">
@@ -244,14 +222,12 @@
 
             <div class="project-card">
                 <div class="project-media">
-                    <img src="images/Thailand.png" alt="Project 2 Screenshot" />
+                    <img src="images/Thailand.png" alt="Thailand migration study" />
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">
-                        Unveiling the untold stories in the Land of Smiles: a comparative  analysis on expatriates and Burmese workers in Thailand (HUM-500)
-                    </h3>
-                    <p style="color: rgba(80,80,80,1);">
-                        As part of a group project of the course, we worked on a comparative analysis of expatriates and Burmese migrant workers in Thailand, examining their migration motivations, integration challenges, and socio-economic experiences. It explores Thailand’s legal framework and visa policies, highlighting the pull and push factors of the migration dynamics. Through the analysis of both high-skilled expats (from Western and Asian origins) and low-skilled Burmese workers, the study reveals how cultural, legal, and social dynamics impact their lives.
+                    <h3 class="text-primary">Unveiling the untold stories in the Land of Smiles: a comparative analysis on expatriates and Burmese workers in Thailand (HUM-500)</h3>
+                    <p class="text-primary">
+                        As part of a group project of the course, we worked on a comparative analysis of expatriates and Burmese migrant workers in Thailand, examining their migration motivations, integration challenges, and socio-economic experiences. It explores Thailand's legal framework and visa policies, highlighting the pull and push factors of the migration dynamics. Through the analysis of both high-skilled expats (from Western and Asian origins) and low-skilled Burmese workers, the study reveals how cultural, legal, and social dynamics impact their lives.
                     </p>
                     <div class="project-links">
                         <a href="pdfs/HUM500.pdf" target="_blank" class="project-link">
@@ -263,14 +239,13 @@
 
             <div class="project-card">
                 <div class="project-media">
-                    <img src="images/TNE.png" alt="Project 2 Screenshot" />
+                    <img src="images/TNE.png" alt="Spinal cord injury neuroprosthesis" />
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">
-                        Restoring upper limb and hand/fingers function after a spinal cord injury (Translationnal Engineering NX-423)
-                    </h3>
-                    <p style="color: rgba(80,80,80,1);">
-                        As part of our group project, we theorized a neuroprosthesis to restore upper limb and hand function after spinal cord injury that emphasizes on the clinical translation in restoring fine motor control. Our report details the integration of intracortical recording with subcellular carbon fiber electrodes, decoding algorithms, and selective stimulation devices. This approach overcomes limitations of traditional methods by enhancing motor precision and reducing fatigue.                      </p>
+                    <h3 class="text-primary">Restoring upper limb and hand/fingers function after a spinal cord injury (Translationnal Engineering NX-423)</h3>
+                    <p class="text-primary">
+                        As part of our group project, we theorized a neuroprosthesis to restore upper limb and hand function after spinal cord injury that emphasizes on the clinical translation in restoring fine motor control. Our report details the integration of intracortical recording with subcellular carbon fiber electrodes, decoding algorithms, and selective stimulation devices. This approach overcomes limitations of traditional methods by enhancing motor precision and reducing fatigue.
+                    </p>
                     <div class="project-links">
                         <a href="pdfs/Translational_Neuroscience__Project%20(1).pdf" target="_blank" class="project-link">
                             <i class="fas fa-file-pdf"></i> Project report
@@ -281,14 +256,13 @@
 
             <div class="project-card">
                 <div class="project-media">
-                    <img src="images/TNE_2.png" alt="Project 2 Screenshot" />
+                    <img src="images/TNE_2.png" alt="Stroke rehabilitation neuromodulation" />
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">
-                        Personalized Stroke Rehabilitation via Multimodal Data and Model-Guided Neuromodulation (Translationnal Engineering NX-423)
-                    </h3>
-                    <p style="color: rgba(80,80,80,1);">
-                        As part of our group project, we theorized a personalized stroke rehabilitation approach using multimodal data and model-guided neuromodulation. It addresses limitations of standardized rTMS protocols by integrating patient-specific data, including clinical scores, demographics, and neuroimaging biomarkers. The theorized prognostic prediction model predicts recovery trajectories, assesses risk, recommends therapies, and optimizes rTMS parameters to tailor treatment to individual needs. </p>
+                    <h3 class="text-primary">Personalized Stroke Rehabilitation via Multimodal Data and Model-Guided Neuromodulation (Translationnal Engineering NX-423)</h3>
+                    <p class="text-primary">
+                        As part of our group project, we theorized a personalized stroke rehabilitation approach using multimodal data and model-guided neuromodulation. It addresses limitations of standardized rTMS protocols by integrating patient-specific data, including clinical scores, demographics, and neuroimaging biomarkers. The theorized prognostic prediction model predicts recovery trajectories, assesses risk, recommends therapies, and optimizes rTMS parameters to tailor treatment to individual needs.
+                    </p>
                     <div class="project-links">
                         <a href="pdfs/TNE_report_2.pdf" target="_blank" class="project-link">
                             <i class="fas fa-file-pdf"></i> Project report
@@ -299,16 +273,15 @@
 
             <div class="project-card">
                 <div class="project-media">
-                    <img src="images/irm.gif" alt="Project 2 Screenshot" />
+                    <img src="images/irm.gif" alt="MRI emotional auditory stimuli analysis" />
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">
-                        Neural signals et signal processing Miniproject (NX-421)
-                    </h3>
-                    <p style="color: rgba(80,80,80,1);">
+                    <h3 class="text-primary">Neural signals et signal processing Miniproject (NX-421)</h3>
+                    <p class="text-primary">
                         As part of course group miniproject, we explored the neural processing of emotional
                         auditory stimuli using MRI dataset, aiming to identify brain activation differences when subjects listen to
                         positive versus negative music and neutral tones.
+                    </p>
                     <div class="project-links">
                         <a href="pdfs/NSSP_MiniProject1%20(1).pdf" target="_blank" class="project-link">
                             <i class="fas fa-file-pdf"></i> Project Report
@@ -319,57 +292,49 @@
 
             <div class="project-card">
                 <div class="project-media">
-                    <img src="images/ESN.jpg" alt="Project 2 Screenshot" />
+                    <img src="images/ESN.jpg" alt="ESN Welcome Week event" />
                 </div>
                 <div class="project-info">
-                    <h3 style="color: rgba(80,80,80,1);">
-                        Welcome week for Erasmus Student Network (ESN)
-                    </h3>
-                    <p style="color: rgba(80,80,80,1);">
-                        As a board member of ESN EPFL, I collaborated with ESN UNIL to plan and coordinate the Spring 2025 Welcome Week. This event was dedicated to integrating incoming exchange students by organizing 10 events over 8 days, drawing between 90 and 200 participants. In coordination with the other Welcome Week coordinator of ESN UNIL, we managed a 27-person organizing committee, oversaw 70 staff members during the event, and handled a budget of 50,000 CHF.</p>
+                    <h3 class="text-primary">Welcome week for Erasmus Student Network (ESN)</h3>
+                    <p class="text-primary">
+                        As a board member of ESN EPFL, I collaborated with ESN UNIL to plan and coordinate the Spring 2025 Welcome Week. This event was dedicated to integrating incoming exchange students by organizing 10 events over 8 days, drawing between 90 and 200 participants. In coordination with the other Welcome Week coordinator of ESN UNIL, we managed a 27-person organizing committee, oversaw 70 staff members during the event, and handled a budget of 50,000 CHF.
+                    </p>
                     <div class="project-links">
                         <a href="https://epfl.esn.ch/welcome-week-A2023" target="_blank" class="project-link">
-                            <i class="fas fa-file-pdf"></i> Welcome Week ESN
+                            <i class="fas fa-link"></i> Welcome Week ESN
                         </a>
                     </div>
                 </div>
             </div>
+
         </div>
         <!-- Navigation buttons -->
-        <button class="slider-btn prev">‹</button>
-        <button class="slider-btn next">›</button>
+        <button class="slider-btn prev">&#8249;</button>
+        <button class="slider-btn next">&#8250;</button>
     </div>
 </section>
 
 
 <section class="circular-skills">
+    <h2 class="text-primary">Skills</h2>
+    <div class="skills-circle" style="position: relative;">
 
-    <h2 style="color: rgba(80,80,80,1);">Skills</h2>
-    <div class="skills-circle" style="position: relative;" style="color: rgba(80,80,80,1);">
-
-        <!-- 4 circles:
-             1) inner-circle    (icons)
-             2) middle-circle   (dashed, no icons)
-             3) outer-circle    (icons)
-             4) outermost-circle (dashed, no icons)
-        -->
         <div class="inner-circle"></div>
-        <div class="middle-circle" style="color: rgba(80,80,80,1);"></div>
-        <div class="outer-circle" style="color: rgba(80,80,80,1);"></div>
+        <div class="middle-circle"></div>
+        <div class="outer-circle"></div>
         <div class="outermost-circle"></div>
 
-        <!-- Icons on inner circle -->
+        <!-- Inner circle icons (Experienced) -->
         <span class="circular-icon-container inner-icon">
           <span class="icon-inner">
-            <i class="devicon-python-plain colored" ></i>
+            <i class="devicon-python-plain colored"></i>
             <span class="circular-tooltip">Python</span>
           </span>
         </span>
 
-
         <span class="circular-icon-container inner-icon">
           <span class="icon-inner">
-            <img src="images/mne_icon.svg" alt="Custom Icon" width="48" height="48">
+            <img src="images/mne_icon.svg" alt="MNE" width="48" height="48">
             <span class="circular-tooltip">MNE</span>
           </span>
         </span>
@@ -389,32 +354,31 @@
         </span>
 
         <span class="circular-icon-container inner-icon">
-            <span class="icon-inner">
-                <i class="devicon-vscode-plain colored"></i>
-                <span class="circular-tooltip">VS Code</span>
-            </span>
+          <span class="icon-inner">
+            <i class="devicon-vscode-plain colored"></i>
+            <span class="circular-tooltip">VS Code</span>
+          </span>
         </span>
 
         <span class="circular-icon-container inner-icon">
-            <span class="icon-inner">
-                <img width="48" height="48" src="https://img.icons8.com/nolan/64/notion.png" alt="notion"/>
-                <span class="circular-tooltip">Notion</span>
-            </span>
+          <span class="icon-inner">
+            <img width="48" height="48" src="https://img.icons8.com/nolan/64/notion.png" alt="Notion"/>
+            <span class="circular-tooltip">Notion</span>
+          </span>
         </span>
 
         <span class="circular-icon-container inner-icon">
-            <span class="icon-inner">
-                <i class="devicon-dataspell-plain colored"></i>
-                <span class="circular-tooltip">Dataspell</span>
-            </span>
+          <span class="icon-inner">
+            <i class="devicon-dataspell-plain colored"></i>
+            <span class="circular-tooltip">Dataspell</span>
+          </span>
         </span>
 
-
         <span class="circular-icon-container inner-icon">
-            <span class="icon-inner">
-                <i class="devicon-github-original colored"></i>
-                <span class="circular-tooltip">GitHub</span>
-            </span>
+          <span class="icon-inner">
+            <i class="devicon-github-original colored"></i>
+            <span class="circular-tooltip">GitHub</span>
+          </span>
         </span>
 
         <span class="circular-icon-container inner-icon">
@@ -423,45 +387,50 @@
             <span class="circular-tooltip">Pytorch</span>
           </span>
         </span>
-        <span class="circular-icon-container inner-icon">
-            <span class="icon-inner">
-                <i class="devicon-latex-original colored"></i>
-                <span class="circular-tooltip">LaTeX</span>
-            </span>
-        </span>
-        <span class="circular-icon-container inner-icon">
-            <span class="icon-inner">
 
-                <i class="devicon-tensorflow-original colored"></i>
-
-                <span class="circular-tooltip">Tensorflow</span>
-            </span>
-        </span>
         <span class="circular-icon-container inner-icon">
-            <span class="icon-inner">
-                <i class="devicon-jupyter-plain colored"></i>
-                <span class="circular-tooltip">Jupyter</span>
-            </span>
-        </span>
-
-        
-        
-        <span class="circular-icon-container inner-icon">
-            <span class="icon-inner">
-                <i class="devicon-keras-plain colored"></i>
-                <span class="circular-tooltip">Keras</span>
-            </span>
-        </span>
-
-        <span class="circular-icon-container outer-icon">
           <span class="icon-inner">
-            <span class="icon-text" style="font-family: Arial, sans-serif; font-size: 10px; line-height: 1.2; ">
-                Familiar </span>
+            <i class="devicon-latex-original colored"></i>
+            <span class="circular-tooltip">LaTeX</span>
           </span>
         </span>
-        <!-- Add more inner-icon as needed -->
 
-        <!-- Icons on outer circle -->
+        <span class="circular-icon-container inner-icon">
+          <span class="icon-inner">
+            <i class="devicon-tensorflow-original colored"></i>
+            <span class="circular-tooltip">Tensorflow</span>
+          </span>
+        </span>
+
+        <span class="circular-icon-container inner-icon">
+          <span class="icon-inner">
+            <i class="devicon-jupyter-plain colored"></i>
+            <span class="circular-tooltip">Jupyter</span>
+          </span>
+        </span>
+
+        <span class="circular-icon-container inner-icon">
+          <span class="icon-inner">
+            <i class="devicon-keras-plain colored"></i>
+            <span class="circular-tooltip">Keras</span>
+          </span>
+        </span>
+
+        <!-- "Experienced" label on inner ring -->
+        <span class="circular-icon-container inner-icon">
+          <span class="icon-inner">
+            <span class="icon-text">Experienced</span>
+          </span>
+        </span>
+
+        <!-- "Familiar" label on outer ring -->
+        <span class="circular-icon-container outer-icon">
+          <span class="icon-inner">
+            <span class="icon-text">Familiar</span>
+          </span>
+        </span>
+
+        <!-- Outer circle icons (Familiar) -->
         <span class="circular-icon-container outer-icon">
           <span class="icon-inner">
             <i class="devicon-matlab-plain colored"></i>
@@ -470,77 +439,73 @@
         </span>
 
         <span class="circular-icon-container outer-icon">
-            <span class="icon-inner">
-                <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
-
-                <span class="circular-tooltip">AWS</span>
-            </span>
+          <span class="icon-inner">
+            <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+            <span class="circular-tooltip">AWS</span>
+          </span>
         </span>
-
-        <span class="circular-icon-container outer-icon">
-            <span class="icon-inner">
-                <i class="devicon-anaconda-original colored"></i>
-                <span class="circular-tooltip">Anaconda</span>
-            </span>
-        </span>
-        
-        <span class="circular-icon-container outer-icon">
-            <span class="icon-inner">
-                <i class="devicon-bash-plain colored"></i>
-                <span class="circular-tooltip">Bash</span>
-            </span>
-        </span>
-        <span class="circular-icon-container outer-icon">
-            <span class="icon-inner">
-                <i class="devicon-r-plain colored"></i>
-                <span class="circular-tooltip">R</span>
-            </span>
-        </span>
-
-
-        <span class="circular-icon-container outer-icon">
-            <span class="icon-inner">
-            <i class="devicon-javascript-plain colored"></i>
-            <span class="circular-tooltip">JavaScript</span>
-            </span>
-        </span>
-
 
         <span class="circular-icon-container outer-icon">
           <span class="icon-inner">
-            <img src="images/bureau.png" alt="Custom Icon" width="48" height="48">
+            <i class="devicon-anaconda-original colored"></i>
+            <span class="circular-tooltip">Anaconda</span>
+          </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+          <span class="icon-inner">
+            <i class="devicon-bash-plain colored"></i>
+            <span class="circular-tooltip">Bash</span>
+          </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+          <span class="icon-inner">
+            <i class="devicon-r-plain colored"></i>
+            <span class="circular-tooltip">R</span>
+          </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+          <span class="icon-inner">
+            <i class="devicon-javascript-plain colored"></i>
+            <span class="circular-tooltip">JavaScript</span>
+          </span>
+        </span>
+
+        <span class="circular-icon-container outer-icon">
+          <span class="icon-inner">
+            <img src="images/bureau.png" alt="Pack Office" width="48" height="48">
             <span class="circular-tooltip">Pack office</span>
           </span>
         </span>
 
-
         <span class="circular-icon-container outer-icon">
-            <span class="icon-inner">
+          <span class="icon-inner">
             <i class="devicon-unrealengine-original colored"></i>
             <span class="circular-tooltip">Unreal Engine</span>
-            </span>
+          </span>
         </span>
 
         <span class="circular-icon-container outer-icon">
-            <span class="icon-inner">
-
+          <span class="icon-inner">
             <i class="devicon-pytest-plain colored"></i>
-
             <span class="circular-tooltip">Pytest</span>
-            </span>
+          </span>
         </span>
+
         <span class="circular-icon-container outer-icon">
-            <span class="icon-inner">
+          <span class="icon-inner">
             <i class="devicon-html5-plain colored"></i>
             <span class="circular-tooltip">HTML5</span>
-            </span>
+          </span>
         </span>
 
         <span class="circular-icon-container outer-icon">
-            <span class="icon-inner">
+          <span class="icon-inner">
             <i class="devicon-css3-plain colored"></i>
             <span class="circular-tooltip">CSS3</span>
-            </span>
+          </span>
         </span>
 
         <span class="circular-icon-container outer-icon">
@@ -549,19 +514,6 @@
             <span class="circular-tooltip">C++</span>
           </span>
         </span>
-        <!-- Add more outer-icon as needed -->
-
-        <!-- Another icon container, but text only -->
-        <span class="circular-icon-container inner-icon">
-          <span class="icon-inner">
-            <span class="icon-text" style="font-family: Arial, sans-serif; font-size: 10px; line-height: 1.2; ">
-              Experienced
-            </span>
-
-          </span>
-        </span>
-
-        
 
     </div>
 </section>
@@ -571,14 +523,10 @@
 <section class="contact">
     <h2>Contact Information</h2>
     <ul class="contact-list">
-    <p>Email: <a href="mailto:adrien.feillard@gmail.com">adrien.feillard@gmail.com</a> or <a href="mailto:adrien.feillard@epfl.ch">adrien.feillard@epfl.ch</a></p>
-    <p>
-        <i class="devicon-linkedin-plain colored"></i>  <a href="https://www.linkedin.com/in/adrien-feillard-a299982b7/" target="_blank">Linkedin</a></p>
+        <p>Email: <a href="mailto:adrien.feillard@gmail.com">adrien.feillard@gmail.com</a> or <a href="mailto:adrien.feillard@epfl.ch">adrien.feillard@epfl.ch</a></p>
+        <p><i class="devicon-linkedin-plain colored"></i> <a href="https://www.linkedin.com/in/adrien-feillard-a299982b7/" target="_blank">Linkedin</a></p>
     </ul>
 </section>
-
-
-
 
 </body>
 </html>

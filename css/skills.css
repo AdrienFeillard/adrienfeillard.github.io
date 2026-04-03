@@ -1,0 +1,138 @@
+/* -----------------------------------------------------
+   Skills Section (Circular Layout)
+----------------------------------------------------- */
+.circular-skills {
+    background: var(--color-white);
+    padding: 100px 40px;
+}
+
+.circular-skills h2 {
+    margin-bottom: 120px;
+}
+
+/* Circle container */
+.skills-circle {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+/* Circle elements */
+.inner-circle, .middle-circle,
+.outer-circle, .outermost-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.inner-circle {
+    background-color: var(--color-white);
+    border: 2px solid var(--color-white);
+    opacity: 0;
+}
+
+.middle-circle {
+    background: none;
+    border: 2px dashed black;
+}
+
+.outer-circle {
+    background-color: var(--color-white);
+    border: 2px solid var(--color-white);
+    opacity: 0;
+}
+
+.outermost-circle {
+    background: none;
+    border: 2px dashed black;
+}
+
+/* Icon containers */
+.circular-icon-container {
+    position: absolute;
+    z-index: 2;
+    transition: top 0.4s ease, left 0.4s ease, transform 0.4s ease;
+}
+
+.circular-icon-container.outer-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circular-icon-container.inner-icon {
+    width: 48px;
+    height: 48px;
+    align-items: center;
+}
+
+/* Icon inner element (scaling & hover) */
+.icon-inner {
+    display: inline-block;
+    transform: scale(1);
+    transition: transform var(--transition-normal);
+}
+
+/* Hover states using :has() */
+.skills-circle:hover .icon-inner {
+    transform: scale(0.9);
+}
+
+.skills-circle:has(.circular-icon-container:hover) .icon-inner {
+    transform: scale(0.7);
+}
+
+.skills-circle:has(.circular-icon-container:hover)
+.circular-icon-container:hover .icon-inner {
+    transform: scale(1.8);
+}
+
+/* Black & white icons by default, color on hover */
+.icon-inner i,
+.icon-inner img {
+    filter: brightness(0) saturate(0);
+    opacity: 0.8;
+    transition: filter var(--transition-normal);
+}
+
+.icon-inner:hover i,
+.icon-inner:hover img {
+    filter: none;
+}
+
+/* Tooltip */
+.circular-tooltip {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-tooltip-bg);
+    color: var(--color-tooltip-text);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.circular-icon-container:hover .circular-tooltip {
+    opacity: 1;
+    z-index: 9999;
+    visibility: visible;
+    transform: translate(-50%, -70%) scale(0.6);
+}
+
+/* Icon text labels */
+.icon-text {
+    font-family: var(--font-family);
+    font-size: 10px;
+    line-height: 1.2;
+}

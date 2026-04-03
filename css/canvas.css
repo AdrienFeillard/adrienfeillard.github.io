@@ -1,0 +1,13 @@
+/* -----------------------------------------------------
+   Canvas (Brain 3D Model)
+----------------------------------------------------- */
+#brain-canvas {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ede8d0;
+    display: block;
+}

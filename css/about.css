@@ -1,0 +1,55 @@
+/* -----------------------------------------------------
+   About Section
+----------------------------------------------------- */
+.about {
+    background-color: var(--color-white);
+}
+
+.about p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.about-links p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    border: 2px solid var(--color-accent);
+    border-radius: 5px;
+    overflow: hidden;
+    display: inline-block;
+    transition: border-color var(--transition-normal);
+    padding: 5px;
+}
+
+.about-image img {
+    border: 0px solid #800020;
+    border-radius: 2px;
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter var(--transition-fast);
+}
+
+.about-image:hover {
+    border-color: var(--color-primary);
+}
+
+.about-image img:hover {
+    filter: grayscale(0);
+}
+
+@media (max-width: 600px) {
+    .about h2 { font-size: 1.8rem; }
+    .about p  { font-size: 1rem; }
+}
